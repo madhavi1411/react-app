@@ -1,4 +1,4 @@
-
+import "whatwg-fetch";
 
 
 //Ajax calls using Fetch.
@@ -10,6 +10,7 @@ function fetchJson(url, options) {
     console.log(url, options);
     return window.fetch(url, options)
            .then ( response => {
+               console.log("got response for ", url);
                return response.json();
            })
 }

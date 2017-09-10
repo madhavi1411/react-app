@@ -26,10 +26,19 @@ export function getProducts() {
     //called by thunk middleware
     return function(dispatch) {
         console.log ("called by middleware");
-        productApi.getProducts()
+        //return for unit testing
+        dispatch(loading(true));
+
+        return productApi.getProducts()
         .then ( products => {
+            
+            console.log ("dispatching init products action")
             let action = initProducts(products);
+
             dispatch(action);
+
+            dispatch(loading(false));
+            
         })
     }
 

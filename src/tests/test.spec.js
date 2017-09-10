@@ -41,3 +41,9 @@ console.log(math.add(100, 300))
 console.log(math.add.mock.calls.length);
 
 console.log(math.sub(100, 20));
+
+describe ( "test mock", () => {
+    it("test", () => {
+        expect(true).toBe(true);
+    })
+})

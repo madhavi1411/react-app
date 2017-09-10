@@ -14,8 +14,6 @@ export default class ProductList extends Component {
         super(props);
     }
 
-    
-    
     componentDidMount() {
         this.props.actions.getProducts();
     }

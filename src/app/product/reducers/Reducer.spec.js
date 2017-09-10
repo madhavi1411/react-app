@@ -1,12 +1,10 @@
 import reducer from "./Reducer";
-import * as ActionTypes from "./ActionTypes";
+import * as ActionTypes from "../ActionTypes";
 
 describe ("Testing reducer", ()=> {
-    it("should true to be true", ()=> {
-        expect(true).toBe(true);
-    })
+    
 
-    it ("initial state", () => {
+    it ("should be initial state", () => {
         expect(reducer(undefined, {}))
         .toEqual ({
             
@@ -24,13 +22,13 @@ describe ("Testing reducer", ()=> {
     })
 
 
-    it ("initial state", () => {
+    it ("should change loading state", () => {
         expect(reducer({
-                loading: false
+                loading: false,
+                product: {}
         }, {
             type: ActionTypes.LOADING,
-            loading: true,
-            product: {}
+            loading: true
         }))
         .toEqual ({
                 loading: true,
@@ -41,7 +39,7 @@ describe ("Testing reducer", ()=> {
 
 
 
-    it ("initial state", () => {
+    it ("should have one item in the products", () => {
         expect(reducer({
                 products: []
         }, {
@@ -55,7 +53,7 @@ describe ("Testing reducer", ()=> {
 
     })
 
-    it ("initial state", () => {
+    it ("should have updated data in product", () => {
         expect(reducer({
                 product: {}
         }, {
