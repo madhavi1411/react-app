@@ -4,7 +4,7 @@ import {bindActionCreators} from "redux";
 
 import ProductWidget from "../components/ProductWidget";
 import * as actions from "../Actions";
-import * as cartActions from "../../cart/Actions";
+import * as cartActions from "../../cart/actions";
 
 const mapStateToProps = (state) => {
     return {
